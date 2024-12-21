@@ -7,121 +7,144 @@ import Vehicle from "../models/vehicle.model.js";
 import Trip from "../models/trip.model.js";
 import Review from "../models/review.model.js";
 
-// Generate 30 users
+// 1. Generate Users (30 total: 10 drivers, 20 passengers)
 const generateUsers = () => {
-    const users = [];
-    for (let i = 0; i < 30; i++) {
-        const isDriver = i < 10; // Only 10 drivers
-        users.push(
-            new User({
-                _id: new mongoose.Types.ObjectId(),
-                name: faker.person.fullName(),
-                phonenumber: faker.phone.number("##########"),
-                email: faker.internet.email(),
-                password: faker.internet.password(),
-                type: isDriver ? "driver" : "passenger", // Driver or Passenger
-                active: true,
-                createdAt: faker.date.past(),
-            })
-        );
-    }
-    return users;
+  const users = [];
+  for (let i = 0; i < 30; i++) {
+    const isDriver = i < 10; // first 10 users are drivers
+    users.push(
+      new User({
+        _id: new mongoose.Types.ObjectId(),
+        name: faker.person.fullName(),
+        phonenumber: faker.phone.number("##########"),
+        email: faker.internet.email(),
+        password: faker.internet.password(),
+        type: isDriver ? "driver" : "passenger",
+        active: true,
+        createdAt: faker.date.past(),
+      })
+    );
+  }
+  return users;
 };
 
-// Generate 10 vehicles, each for a driver
+// 2. Generate Vehicles (10 vehicles for the 10 drivers)
 const generateVehicles = (drivers) => {
-    const vehicles = [];
-    drivers.forEach((driver) => {
-        const seats = faker.number.int({ min: 3, max: 7 });
-        vehicles.push(
-            new Vehicle({
-                _id: new mongoose.Types.ObjectId(),
-                userId: driver._id,
-                make: faker.vehicle.manufacturer(),
-                model: faker.vehicle.model(),
-                seats: seats,
-                year: faker.number.int({ min: 2000, max: 2024 }),
-                licensePlate: faker.vehicle.vrm(),
-                createdAt: faker.date.past(),
-            })
-        );
-    });
-    return vehicles;
+  const vehicles = [];
+  drivers.forEach((driver) => {
+    const seats = faker.number.int({ min: 3, max: 7 });
+    vehicles.push(
+      new Vehicle({
+        _id: new mongoose.Types.ObjectId(),
+        userId: driver._id,
+        make: faker.vehicle.manufacturer(),
+        model: faker.vehicle.model(),
+        seats: seats,
+        year: faker.number.int({ min: 2000, max: 2024 }),
+        licensePlate: faker.vehicle.vrm(),
+        createdAt: faker.date.past(),
+      })
+    );
+  });
+  return vehicles;
 };
 
-// Generate trips for drivers (1 to 10 trips)
-const generateTrips = (drivers, vehicles, passengers) => {
-    const trips = [];
-    drivers.forEach((driver, index) => {
-        const vehicle = vehicles[index];
-        const tripCount = faker.number.int({ min: 1, max: 10 }); // 1 to 10 trips for each driver
+// 3. Generate Trips (1 to 10 trips per driver/vehicle)
+const generateTrips = (drivers, vehicles) => {
+  const trips = [];
+  drivers.forEach((driver, index) => {
+    const vehicle = vehicles[index];
+    const tripCount = faker.number.int({ min: 1, max: 10 });
 
-        // Generate departureTime and arrivalTime
-        const departureTime = faker.date.future(); // Random future date
-        const hoursToAdd = faker.number.int({ min: 2, max: 10 }); // 2 to 10 hours later
-        const arrivalTime = new Date(departureTime.getTime() + hoursToAdd * 60 * 60 * 1000);
+    for (let i = 0; i < tripCount; i++) {
+      // departureTime & arrivalTime
+      const departureTime = faker.date.future();
+      const hoursToAdd = faker.number.int({ min: 2, max: 10 });
+      const arrivalTime = new Date(departureTime.getTime() + hoursToAdd * 60 * 60 * 1000);
 
-        for (let i = 0; i < tripCount; i++) {
-            const numberOfPassengers = faker.number.int({ min: 1, max: vehicle.seats - 1 });
-            const tripPassengers = faker.helpers.arrayElements(passengers, numberOfPassengers);
-            const trip = new Trip({
-                _id: new mongoose.Types.ObjectId(),
-                driverId: driver._id,
-                vehicleId: vehicle._id,
-                passengerIds: tripPassengers.map((p) => p._id),
-                date: faker.date.future(),
-                origin: faker.location.city(),
-                destination: faker.location.city(),
-                departureTime: departureTime,
-                arrivalTime: arrivalTime,
-                status: "completed",
-                createdAt: faker.date.past(),
-            });
-            trips.push(trip);
-        }
-    });
-    return trips;
+      const trip = new Trip({
+        _id: new mongoose.Types.ObjectId(),
+        vehicleId: vehicle._id,
+        reviewIds: [], // Will be filled later
+        origin: faker.location.city(),
+        destination: faker.location.city(),
+        departureTime: departureTime,
+        arrivalTime: arrivalTime,
+        price: faker.number.int({ min: 400, max: 900 }),
+        status: "completed",
+        createdAt: faker.date.past(),
+      });
+
+      trips.push(trip);
+    }
+  });
+  return trips;
 };
 
-// Generate reviews for trips (at least one passenger leaves a review)
-const generateReviews = (trips) => {
-    const reviews = [];
-    trips.forEach((trip) => {
-        
-            trip.passengerIds.forEach((passenger) => {
-                if (faker.datatype.boolean()) {
-                    const review = new Review({
-                        _id: new mongoose.Types.ObjectId(),
-                        tripId: trip._id,
-                        userId: passenger,
-                        rating: faker.number.int({ min: 1, max: 5 }),
-                        comment: faker.lorem.sentences(),
-                        createdAt: faker.date.past(),
-                    });
-                    reviews.push(review);
-                }
-            });
-            
+// 4. Generate Reviews for each Trip
+//   At least one passenger leaves a review. We'll choose random passengers.
+const generateReviews = (trips, passengers) => {
+  const reviews = [];
+  trips.forEach((trip) => {
+    // Ensure at least one passenger leaves a review
+    const reviewersCount = faker.number.int({ min: 1, max: Math.min(passengers.length, 5) }); 
+    const selectedReviewers = faker.helpers.arrayElements(passengers, reviewersCount);
+
+    const tripReviews = selectedReviewers.map((reviewer) => {
+      return new Review({
+        _id: new mongoose.Types.ObjectId(),
+        tripId: trip._id,
+        userId: reviewer._id,
+        rating: faker.number.int({ min: 1, max: 5 }),
+        comment: faker.lorem.sentences(),
+        createdAt: faker.date.past(),
+      });
     });
-    return reviews;
+
+    reviews.push(...tripReviews);
+    // Add their IDs to the trip's reviewIds
+    trip.reviewIds = tripReviews.map((r) => r._id);
+  });
+  return reviews;
 };
 
 // Generate data
 const users = generateUsers();
-const drivers = users.filter((user) => user.type === "driver");
-const passengers = users.filter((user) => user.type === "passenger");
+const drivers = users.filter((u) => u.type === "driver");
+const passengers = users.filter((u) => u.type === "passenger");
 const vehicles = generateVehicles(drivers);
-const trips = generateTrips(drivers, vehicles, passengers);
-const reviews = generateReviews(trips);
+const trips = generateTrips(drivers, vehicles);
+const reviews = generateReviews(trips, passengers);
+
+// 5. Add 10 new scheduled trips (one per driver)
+drivers.forEach((driver, index) => {
+  const vehicle = vehicles[index];
+  const departureTime = faker.date.future();
+  const hoursToAdd = faker.number.int({ min: 2, max: 10 });
+  const arrivalTime = new Date(departureTime.getTime() + hoursToAdd * 60 * 60 * 1000);
+
+  const scheduledTrip = new Trip({
+    _id: new mongoose.Types.ObjectId(),
+    vehicleId: vehicle._id,
+    reviewIds: [],
+    origin: faker.location.city(),
+    destination: faker.location.city(),
+    departureTime: departureTime,
+    arrivalTime: arrivalTime,
+    price: faker.number.int({ min: 400, max: 900 }),
+    status: "scheduled",
+    createdAt: faker.date.past(),
+  });
+
+  trips.push(scheduledTrip);
+});
 
 // Prepare data for seeding
 const data = {
-    users,
-    //drivers,
-    //passengers,
-    vehicles,
-    trips,
-    reviews,
+  users,
+  vehicles,
+  trips,
+  reviews,
 };
 
 // Write to file

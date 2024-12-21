@@ -13,6 +13,16 @@ export default [
     ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**']
   },
 
+  // Add this in the rule definitions
+  {
+    name: 'custom/no-unused-vars',
+    rules: {
+      'no-unused-vars': 'off', // Disable
+      // or
+      'no-unused-vars': ['warn', { vars: 'all', args: 'none' }], // Relax
+    },
+  },
+  
   ...pluginVue.configs['flat/essential'],
   ...vueTsEslintConfig(),
   skipFormatting,
