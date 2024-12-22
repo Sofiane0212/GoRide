@@ -1,6 +1,8 @@
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import {useLoginStore} from '@/stores/LoginStore'
+import TripCard from '@/components/TripCard.vue';
 
 const loginStore = useLoginStore();
 
