@@ -5,7 +5,7 @@ import Review from "../models/review.model.js"
 
 export const getPopulatedTrips = async () => {
     try {
-      const trips = await Trip.find()
+      const trips = await Trip.find({ status: 'scheduled' })
         .populate({
           path: 'vehicleId', // Populate vehicleId with full IVehicle object
           populate: {

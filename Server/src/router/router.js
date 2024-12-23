@@ -5,6 +5,6 @@ import authRoutes from "./auth.routes.js";
 import tripRoutes from "./trips.routes.js";
 
 router.use("/auth", authRoutes);
-router.use("/trip", tripRoutes);
+router.use("/trips", tripRoutes);
 
 export default router;
