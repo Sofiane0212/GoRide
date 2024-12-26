@@ -1,12 +1,14 @@
 <!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
+import { useRouter } from 'vue-router'
 import {useLoginStore} from '@/stores/LoginStore'
 import { useTripStore } from '@/stores/TripStore';
 import type { ITrip } from '@/shared/interfaces/Trip.interface';
 
 const loginStore = useLoginStore();
 const tripStore = useTripStore();
+const router = useRouter();
 
 // Search query for filtering trips
 const searchQuery = ref<string>('');
@@ -43,6 +45,11 @@ const formatTime = (time: string | Date) => {
   const date = new Date(time);
   return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 };
+function statusClass(status: string) {
+  if (status === 'completed') return 'status-completed';
+  if (status === 'scheduled') return 'status-scheduled';
+  return '';
+}
 
 // Filter trips based on search query
 // const filteredTrips = computed(() =>
@@ -51,9 +58,16 @@ const formatTime = (time: string | Date) => {
 //   )
 // );
 
+// go to profile
+function goToProfile(id: string) {
+  loginStore.setUserId(id);
+  if (loginStore.getUserId !== '') router.push({name: 'profile'});
+}
+
 onMounted(()=>{
   trips.value = tripStore.getTrips;
   loginStore.setPreviousView('trips');
+  loginStore.userId = '';
 })
 </script>
 
@@ -103,8 +117,11 @@ onMounted(()=>{
             <!-- Left Section -->
             <div class="col-md-6">
               <h5 class="trip-title">
-                {{ trip.origin }} → {{ trip.destination }}
-              </h5>
+              {{ trip.origin }} → {{ trip.destination }} - 
+              <span :class="statusClass(trip.status)" class="trip-status">
+                {{ trip.status }}
+              </span>
+            </h5>
               <p class="trip-details">
                 <strong>Departure:</strong> {{ formatTime(trip.departureTime) }} <br />
                 <strong>Arrival:</strong> {{ formatTime(trip.arrivalTime) }}
@@ -127,9 +144,9 @@ onMounted(()=>{
 
           <!-- Driver Button -->
           <div class="text-center mt-3">
-            <div class="btn btn-highlight">
+            <button class="btn btn-highlight" @click.prevent="goToProfile(trip.vehicleId.userId._id)">
               Driver: {{ trip.vehicleId.userId.name }}
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -189,5 +206,32 @@ onMounted(()=>{
 /* Section Title Styling */
 .text-highlight {
   color: #ffcc00; /* Yellow highlight for title */
+}
+
+/* Base styling for the status */
+.trip-status {
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Completed trips: Green background */
+.status-completed {
+  background-color: #28a745; /* Bootstrap green */
+}
+
+/* Scheduled trips: Blinking red background */
+@keyframes blink-red {
+  0%, 100% {
+    background-color: #dc3545; /* Bootstrap red */
+  }
+  50% {
+    background-color: #ff6b6b; /* Lighter red */
+  }
+}
+
+.status-scheduled {
+  animation: blink-red 1s infinite;
 }
 </style>

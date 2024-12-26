@@ -30,7 +30,7 @@ const handleLogin = async () => {
       // Save JWT token in local storage
       sessionStorage.setItem('token', response.data.token)
       loginStore.setUserName(username);
-      console.log(loginStore.getUserName);
+      //console.log(loginStore.getUserName);
       router.push({path: loginStore.getPreviousView})
     } else {
     //   sessionStorage.setItem('confirmToken', response.data.confirmation)

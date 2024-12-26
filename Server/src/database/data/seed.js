@@ -10,7 +10,7 @@ dotenv.config();
 import User from "../models/user.model.js";
 import Vehicle from "../models/vehicle.model.js";
 import Trip from "../models/trip.model.js";
-import Review from "../models/review.model.js";
+import Reservation from "../models/reservation.model.js";
 
 // Initialize the express application
 const app = express();
@@ -37,7 +37,7 @@ async function seedDatabase(req, res, next) {
         await User.deleteMany({});
         await Vehicle.deleteMany({});
         await Trip.deleteMany({});
-        await Review.deleteMany({});
+        await Reservation.deleteMany({});
         console.log("delete Many !!");
 
         // Seed Users
@@ -52,9 +52,9 @@ async function seedDatabase(req, res, next) {
         await Trip.insertMany(seedData.trips);
         console.log("Trips seeded");
 
-        // Seed Reviews
-        await Review.insertMany(seedData.reviews);
-        console.log("Reviews seeded");
+        // Seed Reservations
+        await Reservation.insertMany(seedData.reservations);
+        console.log("Reservations seeded");
 
         // Send success response
         res.status(200).send("Database seeding completed successfully!");

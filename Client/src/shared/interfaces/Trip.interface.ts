@@ -1,10 +1,10 @@
-import type { IUser } from "./User.interface"
+import type { IReservation } from "./Reservation.interface"
 import type { IVehicle } from "./Vehicle.interface"
 
 export interface ITrip {
     _id: string
     vehicleId: IVehicle
-    reviewIds: IUser[]
+    reservationIds: IReservation[]
     origin: string
     destination: string
     departureTime: Date
@@ -17,7 +17,7 @@ export interface ITrip {
 export default interface Trip {
     _id: string
     vehicleId: string
-    reviewIds: string[]
+    reservationIds: string[]
     origin: string
     destination: string
     departureTime: Date

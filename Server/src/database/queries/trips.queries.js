@@ -1,7 +1,7 @@
 import Trip from "../models/trip.model.js"
 import User from "../models/user.model.js"
 import Vehicle from "../models/vehicle.model.js"
-import Review from "../models/review.model.js"
+import Reservation from "../models/reservation.model.js"
 
 export const getPopulatedTrips = async () => {
     try {
@@ -14,9 +14,9 @@ export const getPopulatedTrips = async () => {
           },
         })
         .populate({
-          path: 'reviewIds', // Populate reviewIds with IReview objects
+          path: 'reservationIds', // Populate reservationIds with IReservation objects
           populate: {
-            path: 'userId', // Populate userId (passenger) inside IReview
+            path: 'userId', // Populate userId (passenger) inside IReservation
             model: 'User',
           },
         });

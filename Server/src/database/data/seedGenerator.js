@@ -5,7 +5,7 @@ import { faker } from "@faker-js/faker";
 import User from "../models/user.model.js";
 import Vehicle from "../models/vehicle.model.js";
 import Trip from "../models/trip.model.js";
-import Review from "../models/review.model.js";
+import Reservation from "../models/reservation.model.js";
 
 // 1. Generate Users (30 total: 10 drivers, 20 passengers)
 const generateUsers = () => {
@@ -65,7 +65,7 @@ const generateTrips = (drivers, vehicles) => {
       const trip = new Trip({
         _id: new mongoose.Types.ObjectId(),
         vehicleId: vehicle._id,
-        reviewIds: [], // Will be filled later
+        reservationIds: [], // Will be filled later
         origin: faker.location.city(),
         destination: faker.location.city(),
         departureTime: departureTime,
@@ -81,31 +81,31 @@ const generateTrips = (drivers, vehicles) => {
   return trips;
 };
 
-// 4. Generate Reviews for each Trip
-//   At least one passenger leaves a review. We'll choose random passengers.
-const generateReviews = (trips, passengers) => {
-  const reviews = [];
+// 4. Generate Reservations for each Trip
+//   At least one passenger leaves a reservation. We'll choose random passengers.
+const generateReservations = (trips, passengers) => {
+  const reservations = [];
   trips.forEach((trip) => {
-    // Ensure at least one passenger leaves a review
-    const reviewersCount = faker.number.int({ min: 1, max: Math.min(passengers.length, 5) }); 
-    const selectedReviewers = faker.helpers.arrayElements(passengers, reviewersCount);
+    // Ensure at least one passenger leaves a reservation
+    const reservationersCount = faker.number.int({ min: 1, max: Math.min(passengers.length, 5) }); 
+    const selectedReservationers = faker.helpers.arrayElements(passengers, reservationersCount);
 
-    const tripReviews = selectedReviewers.map((reviewer) => {
-      return new Review({
+    const tripReservations = selectedReservationers.map((reservationer) => {
+      return new Reservation({
         _id: new mongoose.Types.ObjectId(),
         tripId: trip._id,
-        userId: reviewer._id,
+        userId: reservationer._id,
         rating: faker.number.int({ min: 1, max: 5 }),
         comment: faker.lorem.sentences(),
         createdAt: faker.date.past(),
       });
     });
 
-    reviews.push(...tripReviews);
-    // Add their IDs to the trip's reviewIds
-    trip.reviewIds = tripReviews.map((r) => r._id);
+    reservations.push(...tripReservations);
+    // Add their IDs to the trip's reservationIds
+    trip.reservationIds = tripReservations.map((r) => r._id);
   });
-  return reviews;
+  return reservations;
 };
 
 // Generate data
@@ -114,7 +114,7 @@ const drivers = users.filter((u) => u.type === "driver");
 const passengers = users.filter((u) => u.type === "passenger");
 const vehicles = generateVehicles(drivers);
 const trips = generateTrips(drivers, vehicles);
-const reviews = generateReviews(trips, passengers);
+const reservations = generateReservations(trips, passengers);
 
 // 5. Add 10 new scheduled trips (one per driver)
 drivers.forEach((driver, index) => {
@@ -126,7 +126,7 @@ drivers.forEach((driver, index) => {
   const scheduledTrip = new Trip({
     _id: new mongoose.Types.ObjectId(),
     vehicleId: vehicle._id,
-    reviewIds: [],
+    reservationIds: [],
     origin: faker.location.city(),
     destination: faker.location.city(),
     departureTime: departureTime,
@@ -144,7 +144,7 @@ const data = {
   users,
   vehicles,
   trips,
-  reviews,
+  reservations,
 };
 
 // Write to file

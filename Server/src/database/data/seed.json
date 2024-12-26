@@ -406,7 +406,7 @@
   "trips": [
     {
       "vehicleId": "6764cd6a078e43d3379ff454",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff4da",
         "6764cd6a078e43d3379ff4dc",
         "6764cd6a078e43d3379ff4de"
@@ -422,7 +422,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff454",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff4e0"
       ],
       "origin": "Fort Enrique",
@@ -436,7 +436,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff454",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff4e2"
       ],
       "origin": "South Kamrenborough",
@@ -450,7 +450,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff454",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff4e4",
         "6764cd6a078e43d3379ff4e6",
         "6764cd6a078e43d3379ff4e8",
@@ -467,7 +467,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff454",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff4ec"
       ],
       "origin": "Hodkiewiczfurt",
@@ -481,7 +481,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff454",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff4ee",
         "6764cd6a078e43d3379ff4f0",
         "6764cd6a078e43d3379ff4f2"
@@ -497,7 +497,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff454",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff4f4",
         "6764cd6a078e43d3379ff4f6",
         "6764cd6a078e43d3379ff4f8",
@@ -514,7 +514,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff456",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff4fc",
         "6764cd6a078e43d3379ff4fe",
         "6764cd6a078e43d3379ff500",
@@ -531,7 +531,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff456",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff504",
         "6764cd6a078e43d3379ff506",
         "6764cd6a078e43d3379ff508"
@@ -547,7 +547,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff456",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff50a"
       ],
       "origin": "Lake Gissellecester",
@@ -561,7 +561,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff456",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff50c",
         "6764cd6a078e43d3379ff50e"
       ],
@@ -576,7 +576,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff510",
         "6764cd6a078e43d3379ff512",
         "6764cd6a078e43d3379ff514"
@@ -592,7 +592,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff516",
         "6764cd6a078e43d3379ff518",
         "6764cd6a078e43d3379ff51a",
@@ -610,7 +610,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff520"
       ],
       "origin": "Veronicastead",
@@ -624,7 +624,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff522",
         "6764cd6a078e43d3379ff524",
         "6764cd6a078e43d3379ff526",
@@ -642,7 +642,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff52c"
       ],
       "origin": "Grantshire",
@@ -656,7 +656,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff52e",
         "6764cd6a078e43d3379ff530",
         "6764cd6a078e43d3379ff532",
@@ -673,7 +673,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff536"
       ],
       "origin": "Ullrichtown",
@@ -687,7 +687,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff538",
         "6764cd6a078e43d3379ff53a",
         "6764cd6a078e43d3379ff53c",
@@ -705,7 +705,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff542",
         "6764cd6a078e43d3379ff544"
       ],
@@ -720,7 +720,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45a",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff546"
       ],
       "origin": "Celiamouth",
@@ -734,7 +734,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45a",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff548",
         "6764cd6a078e43d3379ff54a",
         "6764cd6a078e43d3379ff54c",
@@ -752,7 +752,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45a",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff552",
         "6764cd6a078e43d3379ff554",
         "6764cd6a078e43d3379ff556"
@@ -768,7 +768,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45a",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff558",
         "6764cd6a078e43d3379ff55a",
         "6764cd6a078e43d3379ff55c",
@@ -786,7 +786,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45a",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff562",
         "6764cd6a078e43d3379ff564",
         "6764cd6a078e43d3379ff566",
@@ -804,7 +804,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45c",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff56c",
         "6764cd6a078e43d3379ff56e"
       ],
@@ -819,7 +819,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45c",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff570",
         "6764cd6a078e43d3379ff572",
         "6764cd6a078e43d3379ff574",
@@ -836,7 +836,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45c",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff578",
         "6764cd6a078e43d3379ff57a",
         "6764cd6a078e43d3379ff57c"
@@ -852,7 +852,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45c",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff57e"
       ],
       "origin": "East Selmerstad",
@@ -866,7 +866,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45c",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff580",
         "6764cd6a078e43d3379ff582"
       ],
@@ -881,7 +881,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45c",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff584"
       ],
       "origin": "Altadena",
@@ -895,7 +895,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45e",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff586",
         "6764cd6a078e43d3379ff588",
         "6764cd6a078e43d3379ff58a",
@@ -912,7 +912,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45e",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff58e",
         "6764cd6a078e43d3379ff590"
       ],
@@ -927,7 +927,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45e",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff592",
         "6764cd6a078e43d3379ff594",
         "6764cd6a078e43d3379ff596",
@@ -944,7 +944,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45e",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff59a",
         "6764cd6a078e43d3379ff59c",
         "6764cd6a078e43d3379ff59e"
@@ -960,7 +960,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff460",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5a0",
         "6764cd6a078e43d3379ff5a2",
         "6764cd6a078e43d3379ff5a4"
@@ -976,7 +976,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff460",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5a6"
       ],
       "origin": "Wisozkfurt",
@@ -990,7 +990,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff460",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5a8",
         "6764cd6a078e43d3379ff5aa"
       ],
@@ -1005,7 +1005,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff460",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5ac"
       ],
       "origin": "Adriannaborough",
@@ -1019,7 +1019,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff462",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5ae",
         "6764cd6a078e43d3379ff5b0",
         "6764cd6a078e43d3379ff5b2"
@@ -1035,7 +1035,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff462",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5b4",
         "6764cd6a078e43d3379ff5b6"
       ],
@@ -1050,7 +1050,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff462",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5b8",
         "6764cd6a078e43d3379ff5ba",
         "6764cd6a078e43d3379ff5bc",
@@ -1067,7 +1067,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff462",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5c0",
         "6764cd6a078e43d3379ff5c2",
         "6764cd6a078e43d3379ff5c4",
@@ -1085,7 +1085,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff462",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5ca",
         "6764cd6a078e43d3379ff5cc",
         "6764cd6a078e43d3379ff5ce",
@@ -1103,7 +1103,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff462",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5d4",
         "6764cd6a078e43d3379ff5d6",
         "6764cd6a078e43d3379ff5d8",
@@ -1121,7 +1121,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff462",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5de",
         "6764cd6a078e43d3379ff5e0",
         "6764cd6a078e43d3379ff5e2",
@@ -1139,7 +1139,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff464",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5e8",
         "6764cd6a078e43d3379ff5ea",
         "6764cd6a078e43d3379ff5ec"
@@ -1155,7 +1155,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff464",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5ee"
       ],
       "origin": "Evangelinehaven",
@@ -1169,7 +1169,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff464",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5f0",
         "6764cd6a078e43d3379ff5f2"
       ],
@@ -1184,7 +1184,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff464",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5f4",
         "6764cd6a078e43d3379ff5f6",
         "6764cd6a078e43d3379ff5f8",
@@ -1201,7 +1201,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff464",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff5fc",
         "6764cd6a078e43d3379ff5fe"
       ],
@@ -1216,7 +1216,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff464",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff600",
         "6764cd6a078e43d3379ff602",
         "6764cd6a078e43d3379ff604",
@@ -1233,7 +1233,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff464",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff608",
         "6764cd6a078e43d3379ff60a",
         "6764cd6a078e43d3379ff60c"
@@ -1249,7 +1249,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff466",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff60e",
         "6764cd6a078e43d3379ff610",
         "6764cd6a078e43d3379ff612"
@@ -1265,7 +1265,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff466",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff614"
       ],
       "origin": "Compton",
@@ -1279,7 +1279,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff466",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff616",
         "6764cd6a078e43d3379ff618",
         "6764cd6a078e43d3379ff61a"
@@ -1295,7 +1295,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff466",
-      "reviewIds": [
+      "reservationIds": [
         "6764cd6a078e43d3379ff61c"
       ],
       "origin": "Fredricktown",
@@ -1309,7 +1309,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff454",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "Bertaview",
       "destination": "Port Kayden",
       "departureTime": "2025-06-15T10:16:11.632Z",
@@ -1321,7 +1321,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff456",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "West Jasperstead",
       "destination": "Austin",
       "departureTime": "2025-09-24T15:36:40.254Z",
@@ -1333,7 +1333,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff458",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "New Elenorastead",
       "destination": "Rodriguezville",
       "departureTime": "2025-01-29T06:32:26.632Z",
@@ -1345,7 +1345,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45a",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "Pawtucket",
       "destination": "Lake Beth",
       "departureTime": "2025-11-21T04:49:00.034Z",
@@ -1357,7 +1357,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45c",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "East Adelia",
       "destination": "North Tanyaton",
       "departureTime": "2025-07-06T23:28:53.469Z",
@@ -1369,7 +1369,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff45e",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "Port Abdul",
       "destination": "Gorczanyfurt",
       "departureTime": "2025-01-27T01:21:25.612Z",
@@ -1381,7 +1381,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff460",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "West Kaciefurt",
       "destination": "New Shaunborough",
       "departureTime": "2025-05-06T04:05:29.474Z",
@@ -1393,7 +1393,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff462",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "Mistyborough",
       "destination": "Brisaton",
       "departureTime": "2025-08-30T14:54:17.959Z",
@@ -1405,7 +1405,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff464",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "North Reillyfurt",
       "destination": "Lillyborough",
       "departureTime": "2025-06-14T08:53:07.807Z",
@@ -1417,7 +1417,7 @@
     },
     {
       "vehicleId": "6764cd6a078e43d3379ff466",
-      "reviewIds": [],
+      "reservationIds": [],
       "origin": "South Keventon",
       "destination": "Isadoreville",
       "departureTime": "2025-08-07T23:54:49.431Z",
@@ -1428,7 +1428,7 @@
       "_id": "6764cd6a078e43d3379ff630"
     }
   ],
-  "reviews": [
+  "reservations": [
     {
       "tripId": "6764cd6a078e43d3379ff468",
       "userId": "6764cd6a078e43d3379ff438",
